@@ -42,28 +42,16 @@ export default function About() {
 
   const team = [
     {
-      name: 'Mohammad Ali',
+      name: 'Mustapha Mukhtar',
       role: 'CEO & Founder',
-      image: 'https://readdy.ai/api/search-image?query=professional%20bangladeshi%20senior%20businessman%20ceo%20wearing%20formal%20dark%20suit%20confident%20leadership%20pose%20modern%20corporate%20office%20background%20executive%20portrait%20clean%20professional%20lighting&width=400&height=500&seq=team1&orientation=portrait',
-      description: 'Over 20 years of experience in international trade and business development.'
+      image: './yusufa.jpg',
+      description: 'Over 5 years of experience in international trade and business development.'
     },
     {
-      name: 'Ayesha Begum',
-      role: 'Director of Education Services',
-      image: 'https://readdy.ai/api/search-image?query=professional%20bangladeshi%20businesswoman%20wearing%20hijab%20formal%20business%20attire%20confident%20smile%20modern%20office%20setting%20executive%20portrait%20clean%20background%20professional%20photography&width=400&height=500&seq=team2&orientation=portrait',
-      description: 'Expert in international education consulting with partnerships across 30+ countries.'
-    },
-    {
-      name: 'Rashid Khan',
-      role: 'Head of Trade Operations',
-      image: 'https://readdy.ai/api/search-image?query=professional%20bangladeshi%20businessman%20formal%20suit%20experienced%20manager%20modern%20corporate%20environment%20confident%20professional%20portrait%20clean%20background%20high%20quality%20photography&width=400&height=500&seq=team3&orientation=portrait',
-      description: 'Specialist in import-export logistics and international supply chain management.'
-    },
-    {
-      name: 'Nadia Rahman',
-      role: 'Travel & Visa Consultant',
-      image: 'https://readdy.ai/api/search-image?query=professional%20bangladeshi%20female%20consultant%20business%20formal%20attire%20friendly%20approachable%20smile%20modern%20office%20background%20professional%20portrait%20clean%20lighting&width=400&height=500&seq=team4&orientation=portrait',
-      description: 'Certified travel consultant with expertise in visa processing and travel advisory.'
+      name: 'Muhammad Abubakar',
+      role: 'Marketing Manager',
+      image: './yusufa.jpg',
+      description: 'Certified Marketing consultant with more than 5 years of experience in sales marketing.'
     }
   ];
 

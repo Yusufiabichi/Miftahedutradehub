@@ -66,7 +66,7 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <Link to="/admin" className="text-blue-100 hover:text-yellow-400 transition-colors text-sm">
+                <Link to="/" className="text-blue-100 hover:text-yellow-400 transition-colors text-sm">
                   Manage
                 </Link>
               </li>
@@ -95,11 +95,19 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <i className="ri-phone-line text-yellow-400 text-lg"></i>
-                <span className="text-blue-100 text-sm">+234 803 456 7890</span>
+                <span className="text-blue-100 text-sm">
+                  <a href="https://wa.me/2348162411941">
+                    +234 816 241 1941
+                  </a>
+                </span>
               </li>
               <li className="flex items-center space-x-3">
                 <i className="ri-mail-line text-yellow-400 text-lg"></i>
-                <span className="text-blue-100 text-sm">info@miftahedutrade.com</span>
+                <span className="text-blue-100 text-sm">
+                  <a href="mailto:info@miftahedutradehub.com">
+                    info@miftahedutradehub.com
+                  </a>
+                </span>
               </li>
               <li className="flex items-center space-x-3">
                 <i className="ri-time-line text-yellow-400 text-lg"></i>
@@ -117,12 +125,12 @@ export default function Footer() {
               © {currentYear} Miftah Edu-Trade Hub Ltd. All rights reserved.
             </p>
             <a 
-              href="https://readdy.ai/?origin=logo" 
+              href="https://yusufias-portfolio.vercel.app" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-blue-200 hover:text-yellow-400 text-sm transition-colors"
             >
-              Powered by Readdy
+              Developed by Yusufia Dev
             </a>
           </div>
         </div>

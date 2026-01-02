@@ -1,16 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
-import { useEffect } from 'react';
-import Header from '../../components/feature/Header';
-import Footer from '../../components/feature/Footer';
-import WhatsAppButton from '../../components/feature/WhatsAppButton';
-import BackToTop from '../../components/BackToTop';
-
-const blogPosts = [
-  {
-    id: '1',
-    title: 'Top 10 Countries for International Students in 2024',
-    excerpt: 'Discover the best destinations for higher education with excellent scholarship opportunities and post-study work options for international students.',
-    content: `
+import{u as h,r as m,j as e,L as n}from"./index-mA6DqRTN.js";import{H as p,F as u}from"./Footer-esC1oNrv.js";import{W as f}from"./WhatsAppButton-qxSRgJnD.js";import{B as g}from"./BackToTop-D4m1Eili.js";const l=[{id:"1",title:"Top 10 Countries for International Students in 2024",excerpt:"Discover the best destinations for higher education with excellent scholarship opportunities and post-study work options for international students.",content:`
       <p>Choosing the right country for your international education is one of the most important decisions you'll make. In 2024, several destinations stand out for their academic excellence, affordability, and post-study opportunities.</p>
 
       <h2>1. United States</h2>
@@ -45,18 +33,7 @@ const blogPosts = [
 
       <h2>Making Your Choice</h2>
       <p>Consider factors like program quality, cost of living, language requirements, post-study work opportunities, and cultural fit when selecting your destination. Our education counselors can help you navigate these options and find the perfect match for your goals.</p>
-    `,
-    image: 'https://readdy.ai/api/search-image?query=diverse%20international%20students%20studying%20together%20in%20modern%20university%20library%20with%20laptops%20and%20books%20bright%20natural%20lighting%20multicultural%20education%20environment%20clean%20professional%20photography&width=1200&height=600&seq=blog1detail&orientation=landscape',
-    category: 'Education',
-    date: 'March 15, 2024',
-    readTime: '5 min read',
-    author: 'Mustapha Mukhtar'
-  },
-  {
-    id: '2',
-    title: 'Understanding Import-Export Regulations in Bangladesh',
-    excerpt: 'A comprehensive guide to navigating customs procedures, documentation requirements, and compliance standards for successful international trade.',
-    content: `
+    `,image:"https://readdy.ai/api/search-image?query=diverse%20international%20students%20studying%20together%20in%20modern%20university%20library%20with%20laptops%20and%20books%20bright%20natural%20lighting%20multicultural%20education%20environment%20clean%20professional%20photography&width=1200&height=600&seq=blog1detail&orientation=landscape",category:"Education",date:"March 15, 2024",readTime:"5 min read",author:"Mustapha Mukhtar"},{id:"2",title:"Understanding Import-Export Regulations in Bangladesh",excerpt:"A comprehensive guide to navigating customs procedures, documentation requirements, and compliance standards for successful international trade.",content:`
       <p>Navigating import-export regulations is crucial for successful international trade. Bangladesh has specific procedures and documentation requirements that businesses must understand to ensure smooth operations and compliance.</p>
 
       <h2>Import Regulations Overview</h2>
@@ -88,18 +65,7 @@ const blogPosts = [
 
       <h2>Getting Expert Assistance</h2>
       <p>Our trade facilitation team has extensive experience in Bangladesh import-export procedures. We can guide you through documentation, customs clearance, and compliance requirements to ensure your international trade operations run smoothly.</p>
-    `,
-    image: 'https://readdy.ai/api/search-image?query=modern%20cargo%20port%20with%20shipping%20containers%20international%20trade%20logistics%20customs%20clearance%20professional%20business%20environment%20blue%20sky%20clean%20organized%20warehouse&width=1200&height=600&seq=blog2detail&orientation=landscape',
-    category: 'Trade',
-    date: 'March 12, 2024',
-    readTime: '7 min read',
-    author: 'Mustapha Mukhtar'
-  },
-  {
-    id: '3',
-    title: 'Visa Application Tips: Avoiding Common Mistakes',
-    excerpt: 'Learn from experts about the most common visa application errors and how to ensure your application is approved on the first attempt.',
-    content: `
+    `,image:"https://readdy.ai/api/search-image?query=modern%20cargo%20port%20with%20shipping%20containers%20international%20trade%20logistics%20customs%20clearance%20professional%20business%20environment%20blue%20sky%20clean%20organized%20warehouse&width=1200&height=600&seq=blog2detail&orientation=landscape",category:"Trade",date:"March 12, 2024",readTime:"7 min read",author:"Mustapha Mukhtar"},{id:"3",title:"Visa Application Tips: Avoiding Common Mistakes",excerpt:"Learn from experts about the most common visa application errors and how to ensure your application is approved on the first attempt.",content:`
       <p>Visa applications can be complex and stressful. Understanding common mistakes and how to avoid them significantly increases your chances of approval. Here are expert insights to help you navigate the process successfully.</p>
 
       <h2>Incomplete or Incorrect Documentation</h2>
@@ -134,18 +100,7 @@ const blogPosts = [
 
       <h2>Professional Assistance</h2>
       <p>Our visa processing experts have helped thousands of applicants successfully obtain visas. We review your documents, prepare you for interviews, and ensure your application meets all requirements. Let us help you avoid these common mistakes and maximize your chances of approval.</p>
-    `,
-    image: 'https://readdy.ai/api/search-image?query=passport%20with%20visa%20stamps%20travel%20documents%20on%20desk%20professional%20office%20setting%20international%20travel%20planning%20clean%20organized%20workspace%20natural%20lighting&width=1200&height=600&seq=blog3detail&orientation=landscape',
-    category: 'Travel',
-    date: 'March 8, 2024',
-    readTime: '6 min read',
-    author: 'Mustapha Mukhtar'
-  },
-  {
-    id: '4',
-    title: 'Currency Exchange: Best Practices for International Transfers',
-    excerpt: 'Maximize your money transfers with expert tips on timing, exchange rates, and choosing the right service for your international transactions.',
-    content: `
+    `,image:"https://readdy.ai/api/search-image?query=passport%20with%20visa%20stamps%20travel%20documents%20on%20desk%20professional%20office%20setting%20international%20travel%20planning%20clean%20organized%20workspace%20natural%20lighting&width=1200&height=600&seq=blog3detail&orientation=landscape",category:"Travel",date:"March 8, 2024",readTime:"6 min read",author:"Mustapha Mukhtar"},{id:"4",title:"Currency Exchange: Best Practices for International Transfers",excerpt:"Maximize your money transfers with expert tips on timing, exchange rates, and choosing the right service for your international transactions.",content:`
       <p>Whether you're sending money to family, paying for international services, or managing business transactions, understanding currency exchange can save you significant amounts. Here are expert tips to help you get the most value from your international transfers.</p>
 
       <h2>Understanding Exchange Rates</h2>
@@ -177,18 +132,7 @@ const blogPosts = [
 
       <h2>Making Informed Decisions</h2>
       <p>By understanding these factors and shopping around, you can save substantially on international transfers. A little research and planning can make a big difference to the amount that reaches your recipient. Our financial services team can help you find the best transfer solutions for your specific needs.</p>
-    `,
-    image: 'https://readdy.ai/api/search-image?query=international%20currency%20exchange%20money%20transfer%20digital%20banking%20financial%20technology%20modern%20office%20professional%20business%20environment%20clean%20minimalist%20design&width=1200&height=600&seq=blog4detail&orientation=landscape',
-    category: 'Finance',
-    date: 'March 5, 2024',
-    readTime: '4 min read',
-    author: 'Mustapha Mukhtar'
-  },
-  {
-    id: '5',
-    title: 'Scholarship Opportunities in Europe for 2024-2025',
-    excerpt: 'Explore fully-funded and partially-funded scholarship programs available for international students planning to study in European universities.',
-    content: `
+    `,image:"https://readdy.ai/api/search-image?query=international%20currency%20exchange%20money%20transfer%20digital%20banking%20financial%20technology%20modern%20office%20professional%20business%20environment%20clean%20minimalist%20design&width=1200&height=600&seq=blog4detail&orientation=landscape",category:"Finance",date:"March 5, 2024",readTime:"4 min read",author:"Mustapha Mukhtar"},{id:"5",title:"Scholarship Opportunities in Europe for 2024-2025",excerpt:"Explore fully-funded and partially-funded scholarship programs available for international students planning to study in European universities.",content:`
       <p>Europe offers numerous scholarship opportunities for international students, making quality education accessible regardless of financial background. Here's a comprehensive guide to the best scholarship programs for 2024-2025.</p>
 
       <h2>Erasmus+ Programme</h2>
@@ -223,18 +167,7 @@ const blogPosts = [
 
       <h2>Get Expert Guidance</h2>
       <p>Our education counselors specialize in European scholarship applications. We help identify suitable programs, prepare compelling applications, and guide you through the entire process. Let us help you secure funding for your European education dreams.</p>
-    `,
-    image: 'https://readdy.ai/api/search-image?query=beautiful%20european%20university%20campus%20with%20historic%20architecture%20students%20walking%20bright%20sunny%20day%20academic%20environment%20clean%20professional%20photography&width=1200&height=600&seq=blog5detail&orientation=landscape',
-    category: 'Education',
-    date: 'March 1, 2024',
-    readTime: '8 min read',
-    author: 'Mustapha Mukhtar'
-  },
-  {
-    id: '6',
-    title: 'How to Source Quality Products from China',
-    excerpt: 'A step-by-step guide to finding reliable suppliers, conducting quality checks, and managing your sourcing operations in Chinese markets.',
-    content: `
+    `,image:"https://readdy.ai/api/search-image?query=beautiful%20european%20university%20campus%20with%20historic%20architecture%20students%20walking%20bright%20sunny%20day%20academic%20environment%20clean%20professional%20photography&width=1200&height=600&seq=blog5detail&orientation=landscape",category:"Education",date:"March 1, 2024",readTime:"8 min read",author:"Mustapha Mukhtar"},{id:"6",title:"How to Source Quality Products from China",excerpt:"A step-by-step guide to finding reliable suppliers, conducting quality checks, and managing your sourcing operations in Chinese markets.",content:`
       <p>China remains the world's manufacturing powerhouse, offering vast opportunities for businesses seeking quality products at competitive prices. However, successful sourcing requires knowledge, strategy, and careful execution.</p>
 
       <h2>Understanding the Chinese Market</h2>
@@ -269,18 +202,7 @@ const blogPosts = [
 
       <h2>Professional Sourcing Support</h2>
       <p>Our China sourcing team has extensive experience and established supplier networks. We handle supplier identification, negotiation, quality control, and logistics coordination. Let us help you source quality products efficiently while minimizing risks and maximizing value.</p>
-    `,
-    image: 'https://readdy.ai/api/search-image?query=modern%20chinese%20manufacturing%20facility%20with%20quality%20control%20inspection%20professional%20industrial%20environment%20organized%20production%20line%20clean%20bright%20lighting&width=1200&height=600&seq=blog6detail&orientation=landscape',
-    category: 'Trade',
-    date: 'February 28, 2024',
-    readTime: '9 min read',
-    author: 'Mustapha Mukhtar'
-  },
-  {
-    id: '7',
-    title: 'Student Visa Requirements for Canada in 2024',
-    excerpt: 'Complete guide to Canadian student visa application process, required documents, financial proof, and tips for successful approval.',
-    content: `
+    `,image:"https://readdy.ai/api/search-image?query=modern%20chinese%20manufacturing%20facility%20with%20quality%20control%20inspection%20professional%20industrial%20environment%20organized%20production%20line%20clean%20bright%20lighting&width=1200&height=600&seq=blog6detail&orientation=landscape",category:"Trade",date:"February 28, 2024",readTime:"9 min read",author:"Mustapha Mukhtar"},{id:"7",title:"Student Visa Requirements for Canada in 2024",excerpt:"Complete guide to Canadian student visa application process, required documents, financial proof, and tips for successful approval.",content:`
       <p>Canada is one of the most popular destinations for international students, offering world-class education and excellent post-study opportunities. Understanding the student visa (study permit) requirements is crucial for a successful application.</p>
 
       <h2>Eligibility Requirements</h2>
@@ -315,18 +237,7 @@ const blogPosts = [
 
       <h2>Expert Visa Assistance</h2>
       <p>Our visa specialists have helped thousands of students successfully obtain Canadian study permits. We review your documents, prepare your application, and provide interview coaching. Let us help you navigate the process and maximize your chances of approval.</p>
-    `,
-    image: 'https://readdy.ai/api/search-image?query=canadian%20flag%20with%20university%20campus%20background%20international%20students%20diverse%20group%20modern%20educational%20setting%20bright%20natural%20lighting%20professional%20photography&width=1200&height=600&seq=blog7detail&orientation=landscape',
-    category: 'Visa',
-    date: 'February 25, 2024',
-    readTime: '7 min read',
-    author: 'Mustapha Mukhtar'
-  },
-  {
-    id: '8',
-    title: 'Best Time to Book International Flights',
-    excerpt: 'Save money on your international travel by learning the optimal booking windows, seasonal trends, and insider tips from travel experts.',
-    content: `
+    `,image:"https://readdy.ai/api/search-image?query=canadian%20flag%20with%20university%20campus%20background%20international%20students%20diverse%20group%20modern%20educational%20setting%20bright%20natural%20lighting%20professional%20photography&width=1200&height=600&seq=blog7detail&orientation=landscape",category:"Visa",date:"February 25, 2024",readTime:"7 min read",author:"Mustapha Mukhtar"},{id:"8",title:"Best Time to Book International Flights",excerpt:"Save money on your international travel by learning the optimal booking windows, seasonal trends, and insider tips from travel experts.",content:`
       <p>Timing is everything when it comes to booking international flights. Understanding booking patterns, seasonal trends, and airline pricing strategies can help you save hundreds or even thousands of dollars on your next trip.</p>
 
       <h2>The Optimal Booking Window</h2>
@@ -367,256 +278,5 @@ const blogPosts = [
 
       <h2>Expert Travel Planning</h2>
       <p>Our travel specialists monitor fare trends and have access to exclusive deals. We can help you find the best times to book, identify the most cost-effective routes, and maximize your travel budget. Let us handle the research while you focus on planning your trip.</p>
-    `,
-    image: 'https://readdy.ai/api/search-image?query=modern%20airplane%20taking%20off%20during%20golden%20hour%20sunset%20beautiful%20sky%20commercial%20aviation%20international%20travel%20professional%20photography&width=1200&height=600&seq=blog8detail&orientation=landscape',
-    category: 'Travel',
-    date: 'February 22, 2024',
-    readTime: '5 min read',
-    author: 'Mustapha Mukhtar'
-  }
-];
-
-export default function BlogDetailPage() {
-  const { id } = useParams();
-  
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [id]);
-
-  const blog = blogPosts.find(b => b.id === id);
-
-  const handleShare = (platform: string) => {
-    const url = window.location.href;
-    const title = blog?.title || '';
-    
-    let shareUrl = '';
-    
-    switch(platform) {
-      case 'facebook':
-        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-        break;
-      case 'twitter':
-        shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`;
-        break;
-      case 'linkedin':
-        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
-        break;
-      case 'whatsapp':
-        shareUrl = `https://wa.me/?text=${encodeURIComponent(title + ' ' + url)}`;
-        break;
-    }
-    
-    if (shareUrl) {
-      window.open(shareUrl, '_blank', 'width=600,height=400');
-    }
-  };
-
-  if (!blog) {
-    return (
-      <div className="min-h-screen bg-gray-50">
-        <Header />
-        <div className="pt-32 pb-20 text-center">
-          <div className="max-w-2xl mx-auto px-4">
-            <i className="ri-file-search-line text-6xl text-gray-400 mb-6"></i>
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Blog Post Not Found</h1>
-            <p className="text-gray-600 mb-8">The article you're looking for doesn't exist.</p>
-            <Link
-              to="/blog"
-              className="inline-flex items-center px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-all whitespace-nowrap cursor-pointer"
-            >
-              <i className="ri-arrow-left-line mr-2"></i>
-              Back to Blog
-            </Link>
-          </div>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
-
-  const relatedPosts = blogPosts.filter(p => p.id !== blog.id && p.category === blog.category).slice(0, 2);
-  if (relatedPosts.length < 2) {
-    const additionalPosts = blogPosts.filter(p => p.id !== blog.id && p.category !== blog.category).slice(0, 2 - relatedPosts.length);
-    relatedPosts.push(...additionalPosts);
-  }
-
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <Header />
-      <WhatsAppButton />
-      <BackToTop />
-
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link
-            to="/blog"
-            className="inline-flex items-center text-blue-900 hover:text-blue-700 mb-8 transition-colors cursor-pointer whitespace-nowrap"
-          >
-            <i className="ri-arrow-left-line mr-2"></i>
-            Back to Blog
-          </Link>
-
-          <div className="mb-6">
-            <span className="inline-block px-4 py-1 bg-blue-100 text-blue-900 rounded-full text-sm font-semibold mb-4">
-              {blog.category}
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              {blog.title}
-            </h1>
-            <div className="flex flex-wrap items-center gap-4 text-gray-600">
-              <div className="flex items-center space-x-2">
-                <i className="ri-user-line"></i>
-                <span className="text-sm">{blog.author}</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <i className="ri-calendar-line"></i>
-                <span className="text-sm">{blog.date}</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <i className="ri-time-line"></i>
-                <span className="text-sm">{blog.readTime}</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="relative rounded-3xl overflow-hidden mb-12">
-            <img
-              src={blog.image}
-              alt={blog.title}
-              className="w-full h-96 object-cover object-top"
-            />
-          </div>
-
-          {/* Share Buttons */}
-          <div className="mb-8">
-            <p className="text-sm font-semibold text-gray-900 mb-3">Share this article:</p>
-            <div className="flex space-x-3">
-              <button
-                onClick={() => handleShare('facebook')}
-                className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors cursor-pointer"
-                aria-label="Share on Facebook"
-              >
-                <i className="ri-facebook-fill"></i>
-              </button>
-              <button
-                onClick={() => handleShare('twitter')}
-                className="w-10 h-10 bg-sky-500 text-white rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors cursor-pointer"
-                aria-label="Share on Twitter"
-              >
-                <i className="ri-twitter-x-fill"></i>
-              </button>
-              <button
-                onClick={() => handleShare('linkedin')}
-                className="w-10 h-10 bg-blue-700 text-white rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors cursor-pointer"
-                aria-label="Share on LinkedIn"
-              >
-                <i className="ri-linkedin-fill"></i>
-              </button>
-              <button
-                onClick={() => handleShare('whatsapp')}
-                className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-colors cursor-pointer"
-                aria-label="Share on WhatsApp"
-              >
-                <i className="ri-whatsapp-fill"></i>
-              </button>
-            </div>
-          </div>
-
-          <article className="prose prose-lg max-w-none">
-            <div 
-              className="text-gray-700 leading-relaxed space-y-6"
-              dangerouslySetInnerHTML={{ __html: blog.content }}
-              style={{
-                fontSize: '1.125rem',
-                lineHeight: '1.75'
-              }}
-            />
-          </article>
-        </div>
-      </section>
-
-      {/* Related Posts */}
-      {relatedPosts.length > 0 && (
-        <section className="py-16 bg-white border-t border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Related Articles</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {relatedPosts.map((post) => (
-                <article key={post.id} className="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-xl transition-all group">
-                  <div className="relative h-64 overflow-hidden">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-blue-900 rounded-full text-xs font-semibold">
-                        {post.category}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center space-x-4 text-sm text-gray-600 mb-3">
-                      <span className="flex items-center">
-                        <i className="ri-calendar-line mr-1"></i>
-                        {post.date}
-                      </span>
-                      <span className="flex items-center">
-                        <i className="ri-time-line mr-1"></i>
-                        {post.readTime}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-900 transition-colors">
-                      {post.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 line-clamp-2">
-                      {post.excerpt}
-                    </p>
-                    <Link
-                      to={`/blog/${post.id}`}
-                      className="inline-flex items-center text-blue-900 font-semibold hover:text-yellow-600 transition-colors cursor-pointer whitespace-nowrap"
-                    >
-                      Read More
-                      <i className="ri-arrow-right-line ml-2"></i>
-                    </Link>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Have Questions About Our Services?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Our team is ready to help you with personalized guidance
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              to="/contact"
-              className="px-8 py-4 bg-yellow-400 text-blue-900 rounded-lg font-semibold hover:bg-yellow-300 transition-all whitespace-nowrap cursor-pointer inline-flex items-center"
-            >
-              <i className="ri-customer-service-2-line mr-2"></i>
-              Contact Us
-            </Link>
-            <Link
-              to="/services"
-              className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg font-semibold hover:bg-white/20 transition-all whitespace-nowrap cursor-pointer inline-flex items-center"
-            >
-              <i className="ri-service-line mr-2"></i>
-              View All Services
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-    </div>
-  );
-}
+    `,image:"https://readdy.ai/api/search-image?query=modern%20airplane%20taking%20off%20during%20golden%20hour%20sunset%20beautiful%20sky%20commercial%20aviation%20international%20travel%20professional%20photography&width=1200&height=600&seq=blog8detail&orientation=landscape",category:"Travel",date:"February 22, 2024",readTime:"5 min read",author:"Mustapha Mukhtar"}];function w(){const{id:c}=h();m.useEffect(()=>{window.scrollTo(0,0)},[c]);const i=l.find(t=>t.id===c),o=t=>{const a=window.location.href,d=i?.title||"";let s="";switch(t){case"facebook":s=`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(a)}`;break;case"twitter":s=`https://twitter.com/intent/tweet?text=${encodeURIComponent(d)}&url=${encodeURIComponent(a)}`;break;case"linkedin":s=`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(a)}`;break;case"whatsapp":s=`https://wa.me/?text=${encodeURIComponent(d+" "+a)}`;break}s&&window.open(s,"_blank","width=600,height=400")};if(!i)return e.jsxs("div",{className:"min-h-screen bg-gray-50",children:[e.jsx(p,{}),e.jsx("div",{className:"pt-32 pb-20 text-center",children:e.jsxs("div",{className:"max-w-2xl mx-auto px-4",children:[e.jsx("i",{className:"ri-file-search-line text-6xl text-gray-400 mb-6"}),e.jsx("h1",{className:"text-3xl font-bold text-gray-900 mb-4",children:"Blog Post Not Found"}),e.jsx("p",{className:"text-gray-600 mb-8",children:"The article you're looking for doesn't exist."}),e.jsxs(n,{to:"/blog",className:"inline-flex items-center px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-all whitespace-nowrap cursor-pointer",children:[e.jsx("i",{className:"ri-arrow-left-line mr-2"}),"Back to Blog"]})]})}),e.jsx(u,{})]});const r=l.filter(t=>t.id!==i.id&&t.category===i.category).slice(0,2);if(r.length<2){const t=l.filter(a=>a.id!==i.id&&a.category!==i.category).slice(0,2-r.length);r.push(...t)}return e.jsxs("div",{className:"min-h-screen bg-gray-50",children:[e.jsx(p,{}),e.jsx(f,{}),e.jsx(g,{}),e.jsx("section",{className:"pt-32 pb-16 bg-white",children:e.jsxs("div",{className:"max-w-4xl mx-auto px-4 sm:px-6 lg:px-8",children:[e.jsxs(n,{to:"/blog",className:"inline-flex items-center text-blue-900 hover:text-blue-700 mb-8 transition-colors cursor-pointer whitespace-nowrap",children:[e.jsx("i",{className:"ri-arrow-left-line mr-2"}),"Back to Blog"]}),e.jsxs("div",{className:"mb-6",children:[e.jsx("span",{className:"inline-block px-4 py-1 bg-blue-100 text-blue-900 rounded-full text-sm font-semibold mb-4",children:i.category}),e.jsx("h1",{className:"text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight",children:i.title}),e.jsxs("div",{className:"flex flex-wrap items-center gap-4 text-gray-600",children:[e.jsxs("div",{className:"flex items-center space-x-2",children:[e.jsx("i",{className:"ri-user-line"}),e.jsx("span",{className:"text-sm",children:i.author})]}),e.jsxs("div",{className:"flex items-center space-x-2",children:[e.jsx("i",{className:"ri-calendar-line"}),e.jsx("span",{className:"text-sm",children:i.date})]}),e.jsxs("div",{className:"flex items-center space-x-2",children:[e.jsx("i",{className:"ri-time-line"}),e.jsx("span",{className:"text-sm",children:i.readTime})]})]})]}),e.jsx("div",{className:"relative rounded-3xl overflow-hidden mb-12",children:e.jsx("img",{src:i.image,alt:i.title,className:"w-full h-96 object-cover object-top"})}),e.jsxs("div",{className:"mb-8",children:[e.jsx("p",{className:"text-sm font-semibold text-gray-900 mb-3",children:"Share this article:"}),e.jsxs("div",{className:"flex space-x-3",children:[e.jsx("button",{onClick:()=>o("facebook"),className:"w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors cursor-pointer","aria-label":"Share on Facebook",children:e.jsx("i",{className:"ri-facebook-fill"})}),e.jsx("button",{onClick:()=>o("twitter"),className:"w-10 h-10 bg-sky-500 text-white rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors cursor-pointer","aria-label":"Share on Twitter",children:e.jsx("i",{className:"ri-twitter-x-fill"})}),e.jsx("button",{onClick:()=>o("linkedin"),className:"w-10 h-10 bg-blue-700 text-white rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors cursor-pointer","aria-label":"Share on LinkedIn",children:e.jsx("i",{className:"ri-linkedin-fill"})}),e.jsx("button",{onClick:()=>o("whatsapp"),className:"w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-colors cursor-pointer","aria-label":"Share on WhatsApp",children:e.jsx("i",{className:"ri-whatsapp-fill"})})]})]}),e.jsx("article",{className:"prose prose-lg max-w-none",children:e.jsx("div",{className:"text-gray-700 leading-relaxed space-y-6",dangerouslySetInnerHTML:{__html:i.content},style:{fontSize:"1.125rem",lineHeight:"1.75"}})})]})}),r.length>0&&e.jsx("section",{className:"py-16 bg-white border-t border-gray-200",children:e.jsxs("div",{className:"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",children:[e.jsx("h2",{className:"text-3xl font-bold text-gray-900 mb-12 text-center",children:"Related Articles"}),e.jsx("div",{className:"grid md:grid-cols-2 gap-8",children:r.map(t=>e.jsxs("article",{className:"bg-gray-50 rounded-2xl overflow-hidden hover:shadow-xl transition-all group",children:[e.jsxs("div",{className:"relative h-64 overflow-hidden",children:[e.jsx("img",{src:t.image,alt:t.title,className:"w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"}),e.jsx("div",{className:"absolute top-4 left-4",children:e.jsx("span",{className:"px-3 py-1 bg-white/90 backdrop-blur-sm text-blue-900 rounded-full text-xs font-semibold",children:t.category})})]}),e.jsxs("div",{className:"p-6",children:[e.jsxs("div",{className:"flex items-center space-x-4 text-sm text-gray-600 mb-3",children:[e.jsxs("span",{className:"flex items-center",children:[e.jsx("i",{className:"ri-calendar-line mr-1"}),t.date]}),e.jsxs("span",{className:"flex items-center",children:[e.jsx("i",{className:"ri-time-line mr-1"}),t.readTime]})]}),e.jsx("h3",{className:"text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-900 transition-colors",children:t.title}),e.jsx("p",{className:"text-gray-600 mb-4 line-clamp-2",children:t.excerpt}),e.jsxs(n,{to:`/blog/${t.id}`,className:"inline-flex items-center text-blue-900 font-semibold hover:text-yellow-600 transition-colors cursor-pointer whitespace-nowrap",children:["Read More",e.jsx("i",{className:"ri-arrow-right-line ml-2"})]})]})]},t.id))})]})}),e.jsx("section",{className:"py-16 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 text-white",children:e.jsxs("div",{className:"max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center",children:[e.jsx("h2",{className:"text-3xl md:text-4xl font-bold mb-6",children:"Have Questions About Our Services?"}),e.jsx("p",{className:"text-xl text-blue-100 mb-8",children:"Our team is ready to help you with personalized guidance"}),e.jsxs("div",{className:"flex flex-wrap justify-center gap-4",children:[e.jsxs(n,{to:"/contact",className:"px-8 py-4 bg-yellow-400 text-blue-900 rounded-lg font-semibold hover:bg-yellow-300 transition-all whitespace-nowrap cursor-pointer inline-flex items-center",children:[e.jsx("i",{className:"ri-customer-service-2-line mr-2"}),"Contact Us"]}),e.jsxs(n,{to:"/services",className:"px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg font-semibold hover:bg-white/20 transition-all whitespace-nowrap cursor-pointer inline-flex items-center",children:[e.jsx("i",{className:"ri-service-line mr-2"}),"View All Services"]})]})]})}),e.jsx(u,{})]})}export{w as default};
+//# sourceMappingURL=page-BD8mpYV5.js.map

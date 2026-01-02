@@ -5,6 +5,7 @@ import Header from '../../components/feature/Header';
 import Footer from '../../components/feature/Footer';
 import WhatsAppButton from '../../components/feature/WhatsAppButton';
 import ServiceInquiryForm from './components/ServiceInquiryForm';
+import BackToTop from '../../components/BackToTop';
 
 export default function ServiceDetailPage() {
   const { serviceId } = useParams();
@@ -44,6 +45,7 @@ export default function ServiceDetailPage() {
     <div className="min-h-screen bg-gray-50">
       <Header />
       <WhatsAppButton />
+      <BackToTop />
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 text-white relative overflow-hidden">
@@ -267,7 +269,9 @@ export default function ServiceDetailPage() {
               className="px-8 py-4 bg-yellow-400 text-blue-900 rounded-lg font-semibold hover:bg-yellow-300 transition-all whitespace-nowrap cursor-pointer inline-flex items-center"
             >
               <i className="ri-phone-line mr-2"></i>
-              Call Us Now
+              <a href="tel:+2348162411941">
+                Call Us Now
+              </a>
             </a>
             <button
               onClick={() => {
@@ -277,7 +281,9 @@ export default function ServiceDetailPage() {
               className="px-8 py-4 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition-all whitespace-nowrap cursor-pointer inline-flex items-center"
             >
               <i className="ri-whatsapp-line mr-2"></i>
+              <a href="https://wa.me/2348162411941">
               WhatsApp Chat
+              </a>
             </button>
           </div>
         </div>

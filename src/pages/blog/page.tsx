@@ -4,6 +4,7 @@ import Header from '../../components/feature/Header';
 import Footer from '../../components/feature/Footer';
 import WhatsAppButton from '../../components/feature/WhatsAppButton';
 import { useSEO, generateWebPageSchema } from '../../utils/seo';
+import BackToTop from '../../components/BackToTop';
 
 export default function Blog() {
   // SEO
@@ -34,8 +35,8 @@ export default function Blog() {
       category: 'Education',
       date: 'March 15, 2024',
       readTime: '5 min read',
-      author: 'Dr. Sarah Ahmed',
-      authorImage: 'https://readdy.ai/api/search-image?query=professional%20female%20education%20consultant%20wearing%20glasses%20friendly%20smile%20modern%20office%20background%20corporate%20headshot%20clean%20photography&width=100&height=100&seq=author1&orientation=squarish'
+      author: 'Mustpaha Mukhtar',
+      authorImage: './yusufa.jpg'
     },
     {
       id: 2,
@@ -45,8 +46,8 @@ export default function Blog() {
       category: 'Trade',
       date: 'March 12, 2024',
       readTime: '7 min read',
-      author: 'Mohammad Karim',
-      authorImage: 'https://readdy.ai/api/search-image?query=professional%20male%20trade%20consultant%20formal%20business%20attire%20confident%20expression%20modern%20office%20background%20corporate%20headshot%20photography&width=100&height=100&seq=author2&orientation=squarish'
+      author: 'Mustpaha Mukhtar',
+      authorImage: './yusufa.jpg'
     },
     {
       id: 3,
@@ -56,8 +57,8 @@ export default function Blog() {
       category: 'Travel',
       date: 'March 8, 2024',
       readTime: '6 min read',
-      author: 'Fatima Rahman',
-      authorImage: 'https://readdy.ai/api/search-image?query=professional%20female%20travel%20consultant%20wearing%20hijab%20warm%20smile%20modern%20office%20background%20corporate%20headshot%20clean%20photography&width=100&height=100&seq=author3&orientation=squarish'
+      author: 'Mustpaha Mukhtar',
+      authorImage: './yusufa.jpg'
     },
     {
       id: 4,
@@ -67,8 +68,8 @@ export default function Blog() {
       category: 'Finance',
       date: 'March 5, 2024',
       readTime: '4 min read',
-      author: 'Ahmed Hassan',
-      authorImage: 'https://readdy.ai/api/search-image?query=professional%20male%20financial%20advisor%20formal%20suit%20confident%20smile%20modern%20office%20background%20corporate%20headshot%20photography&width=100&height=100&seq=author4&orientation=squarish'
+      author: 'Mustpaha Mukhtar',
+      authorImage: './yusufa.jpg'
     },
     {
       id: 5,
@@ -78,8 +79,8 @@ export default function Blog() {
       category: 'Education',
       date: 'March 1, 2024',
       readTime: '8 min read',
-      author: 'Dr. Sarah Ahmed',
-      authorImage: 'https://readdy.ai/api/search-image?query=professional%20female%20education%20consultant%20wearing%20glasses%20friendly%20smile%20modern%20office%20background%20corporate%20headshot%20clean%20photography&width=100&height=100&seq=author1&orientation=squarish'
+      author: 'Mustpaha Mukhtar',
+      authorImage: './yusufa.jpg'
     },
     {
       id: 6,
@@ -89,8 +90,8 @@ export default function Blog() {
       category: 'Trade',
       date: 'February 28, 2024',
       readTime: '9 min read',
-      author: 'Mohammad Karim',
-      authorImage: 'https://readdy.ai/api/search-image?query=professional%20male%20trade%20consultant%20formal%20business%20attire%20confident%20expression%20modern%20office%20background%20corporate%20headshot%20photography&width=100&height=100&seq=author2&orientation=squarish'
+      author: 'Mustpaha Mukhtar',
+      authorImage: './yusufa.jpg'
     },
     {
       id: 7,
@@ -100,8 +101,8 @@ export default function Blog() {
       category: 'Visa',
       date: 'February 25, 2024',
       readTime: '7 min read',
-      author: 'Fatima Rahman',
-      authorImage: 'https://readdy.ai/api/search-image?query=professional%20female%20travel%20consultant%20wearing%20hijab%20warm%20smile%20modern%20office%20background%20corporate%20headshot%20clean%20photography&width=100&height=100&seq=author3&orientation=squarish'
+      author: 'Mustpaha Mukhtar',
+      authorImage: './yusufa.jpg'
     },
     {
       id: 8,
@@ -111,8 +112,8 @@ export default function Blog() {
       category: 'Travel',
       date: 'February 22, 2024',
       readTime: '5 min read',
-      author: 'Fatima Rahman',
-      authorImage: 'https://readdy.ai/api/search-image?query=professional%20female%20travel%20consultant%20wearing%20hijab%20warm%20smile%20modern%20office%20background%20corporate%20headshot%20clean%20photography&width=100&height=100&seq=author3&orientation=squarish'
+      author: 'Mustpaha Mukhtar',
+      authorImage: './yusufa.jpg'
     },
     {
       id: 9,
@@ -122,8 +123,8 @@ export default function Blog() {
       category: 'Finance',
       date: 'February 18, 2024',
       readTime: '10 min read',
-      author: 'Ahmed Hassan',
-      authorImage: 'https://readdy.ai/api/search-image?query=professional%20male%20financial%20advisor%20formal%20suit%20confident%20smile%20modern%20office%20background%20corporate%20headshot%20photography&width=100&height=100&seq=author4&orientation=squarish'
+      author: 'Mustpaha Mukhtar',
+      authorImage: './yusufa.jpg'
     },
     {
       id: 10,
@@ -133,8 +134,8 @@ export default function Blog() {
       category: 'Education',
       date: 'February 15, 2024',
       readTime: '11 min read',
-      author: 'Dr. Sarah Ahmed',
-      authorImage: 'https://readdy.ai/api/search-image?query=professional%20female%20education%20consultant%20wearing%20glasses%20friendly%20smile%20modern%20office%20background%20corporate%20headshot%20clean%20photography&width=100&height=100&seq=author1&orientation=squarish'
+      author: 'Mustpaha Mukhtar',
+      authorImage: './yusufa.jpg'
     },
     {
       id: 11,
@@ -144,8 +145,8 @@ export default function Blog() {
       category: 'Trade',
       date: 'February 12, 2024',
       readTime: '6 min read',
-      author: 'Mohammad Karim',
-      authorImage: 'https://readdy.ai/api/search-image?query=professional%20male%20trade%20consultant%20formal%20business%20attire%20confident%20expression%20modern%20office%20background%20corporate%20headshot%20photography&width=100&height=100&seq=author2&orientation=squarish'
+      author: 'Mustpaha Mukhtar',
+      authorImage: './yusufa.jpg'
     },
     {
       id: 12,
@@ -155,8 +156,8 @@ export default function Blog() {
       category: 'Visa',
       date: 'February 8, 2024',
       readTime: '8 min read',
-      author: 'Fatima Rahman',
-      authorImage: 'https://readdy.ai/api/search-image?query=professional%20female%20travel%20consultant%20wearing%20hijab%20warm%20smile%20modern%20office%20background%20corporate%20headshot%20clean%20photography&width=100&height=100&seq=author3&orientation=squarish'
+      author: 'Mustpaha Mukhtar',
+      authorImage: './yusufa.jpg'
     }
   ];
 
@@ -173,6 +174,7 @@ export default function Blog() {
     <div className="min-h-screen bg-white">
       <Header />
       <WhatsAppButton />
+      <BackToTop />
 
       <section className="relative py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">

@@ -18,8 +18,8 @@ export default function Header() {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About Us' },
     { path: '/services', label: 'Services' },
-    { path: '/testimonials', label: 'Testimonials' },
-    { path: '/faq', label: 'FAQ' },
+    // { path: '/testimonials', label: 'Testimonials' },
+    // { path: '/faq', label: 'FAQ' },
     { path: '/contact', label: 'Contact' },
   ];
 
@@ -62,12 +62,12 @@ export default function Header() {
             >
               Blog
             </Link>
-            <Link to="/testimonials" className="text-gray-700 hover:text-yellow-600 font-medium transition-colors cursor-pointer whitespace-nowrap">
+            {/* <Link to="/testimonials" className="text-gray-700 hover:text-yellow-600 font-medium transition-colors cursor-pointer whitespace-nowrap">
               Testimonials
             </Link>
             <Link to="/faqs" className="text-gray-700 hover:text-yellow-600 font-medium transition-colors cursor-pointer whitespace-nowrap">
               FAQs
-            </Link>
+            </Link> */}
             <Link
               to="/contact"
               className="px-6 py-2 bg-gradient-to-r from-blue-900 to-blue-700 text-white rounded-lg font-semibold hover:shadow-lg transition-all whitespace-nowrap cursor-pointer"

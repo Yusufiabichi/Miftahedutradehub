@@ -5,6 +5,7 @@ import Footer from '../../components/feature/Footer';
 import WhatsAppButton from '../../components/feature/WhatsAppButton';
 import GallerySection from '../../components/feature/GallerySection';
 import { useSEO, generateOrganizationSchema, generateWebPageSchema } from '../../utils/seo';
+import BackToTop from '../../components/BackToTop';
 
 export default function Home() {
   // SEO
@@ -147,23 +148,23 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: 'Ahmed Rahman',
+      name: 'Ismail Yunus',
       role: 'Business Owner',
-      image: 'https://readdy.ai/api/search-image?query=professional%20bangladeshi%20businessman%20in%20modern%20office%20wearing%20formal%20suit%20confident%20smile%20corporate%20headshot%20clean%20white%20background%20high%20quality%20portrait%20photography&width=100&height=100&seq=test1&orientation=squarish',
+      image: '',
       text: 'Miftah Edu-Trade Hub made our import process incredibly smooth. Their expertise in international trade is unmatched.',
       rating: 5
     },
     {
-      name: 'Fatima Khatun',
+      name: 'Fatima Sulaiman',
       role: 'Student',
-      image: 'https://readdy.ai/api/search-image?query=young%20bangladeshi%20female%20student%20wearing%20hijab%20happy%20smile%20holding%20books%20university%20campus%20background%20bright%20natural%20lighting%20professional%20portrait%20photography&width=100&height=100&seq=test2&orientation=squarish',
+      image: '',
       text: 'Thanks to their scholarship guidance, I am now studying at my dream university in Canada. Highly recommended!',
       rating: 5
     },
     {
-      name: 'Karim Hassan',
+      name: 'Abdulkarim Hassan',
       role: 'Entrepreneur',
-      image: 'https://readdy.ai/api/search-image?query=middle%20aged%20bangladeshi%20entrepreneur%20businessman%20formal%20attire%20professional%20office%20setting%20confident%20expression%20clean%20background%20corporate%20headshot%20photography&width=100&height=100&seq=test3&orientation=squarish',
+      image: '',
       text: 'Their sourcing services helped us find quality suppliers at competitive prices. Excellent service and support.',
       rating: 5
     }
@@ -199,20 +200,20 @@ export default function Home() {
   const blogPosts = [
     {
       id: 1,
-      title: 'Top 10 Countries for International Students in 2024',
+      title: 'Top 10 Countries for International Students in 2026',
       excerpt: 'Discover the best destinations for higher education with excellent scholarship opportunities and post-study work options for international students.',
       image: 'https://readdy.ai/api/search-image?query=diverse%20international%20students%20studying%20together%20in%20modern%20university%20library%20with%20laptops%20and%20books%20bright%20natural%20lighting%20multicultural%20education%20environment%20clean%20professional%20photography&width=600&height=400&seq=blog1&orientation=landscape',
       category: 'Education',
-      date: 'March 15, 2024',
+      date: 'Jan 01, 2025',
       readTime: '5 min read'
     },
     {
       id: 2,
-      title: 'Understanding Import-Export Regulations in Bangladesh',
+      title: 'Understanding Import-Export Regulations in Nigeria',
       excerpt: 'A comprehensive guide to navigating customs procedures, documentation requirements, and compliance standards for successful international trade.',
       image: 'https://readdy.ai/api/search-image?query=modern%20cargo%20port%20with%20shipping%20containers%20international%20trade%20logistics%20customs%20clearance%20professional%20business%20environment%20blue%20sky%20clean%20organized%20warehouse&width=600&height=400&seq=blog2&orientation=landscape',
       category: 'Trade',
-      date: 'March 12, 2024',
+      date: 'March 12, 2025',
       readTime: '7 min read'
     },
     {
@@ -221,7 +222,7 @@ export default function Home() {
       excerpt: 'Learn from experts about the most common visa application errors and how to ensure your application is approved on the first attempt.',
       image: 'https://readdy.ai/api/search-image?query=passport%20with%20visa%20stamps%20travel%20documents%20on%20desk%20professional%20office%20setting%20international%20travel%20planning%20clean%20organized%20workspace%20natural%20lighting&width=600&height=400&seq=blog3&orientation=landscape',
       category: 'Travel',
-      date: 'March 8, 2024',
+      date: 'Aug 8, 2025',
       readTime: '6 min read'
     },
     {
@@ -230,7 +231,7 @@ export default function Home() {
       excerpt: 'Maximize your money transfers with expert tips on timing, exchange rates, and choosing the right service for your international transactions.',
       image: 'https://readdy.ai/api/search-image?query=international%20currency%20exchange%20money%20transfer%20digital%20banking%20financial%20technology%20modern%20office%20professional%20business%20environment%20clean%20minimalist%20design&width=600&height=400&seq=blog4&orientation=landscape',
       category: 'Finance',
-      date: 'March 5, 2024',
+      date: 'Apr 5, 2025',
       readTime: '4 min read'
     }
   ];
@@ -239,7 +240,7 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <Header />
       <WhatsAppButton />
-
+      <BackToTop />
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
@@ -256,7 +257,7 @@ export default function Home() {
             <span className="text-yellow-400">Global Opportunities</span>
           </h1>
           <p className="text-xl md:text-2xl text-blue-100 mb-4 max-w-4xl mx-auto">
-            Import–Export | Education Abroad | Currency Exchange
+            Import–Export | Education Scholarship | Currency Exchange
           </p>
           <p className="text-lg md:text-xl text-blue-200 mb-12 max-w-4xl mx-auto">
             Visa & Travel Services | Sourcing Solutions
@@ -284,7 +285,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">About Miftah Edu-Trade Hub</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mb-6"></div>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              We are a leading provider of comprehensive international trade, education, and travel services. With years of experience and a global network of partners, we help individuals and businesses achieve their international goals with confidence and ease.
+              We are a leading provider of comprehensive international trade, education scholarships, and travel services. With years of experience and a global network of partners, we help individuals and businesses achieve their international goals with confidence and ease.
             </p>
           </div>
 
@@ -314,7 +315,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="group bg-white border-2 border-gray-100 rounded-xl p-8 hover:border-yellow-400 hover:shadow-2xl transition-all">
+              <div key={index} className="group bg-white border-2 shadow-xl border-gray-100 rounded-xl p-8 hover:border-yellow-400 hover:shadow-2xl transition-all">
                 <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                   <i className={`${service.icon} text-3xl text-white`}></i>
                 </div>
@@ -402,7 +403,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               to="/products"
-              className="px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-blue-900 rounded-lg font-semibold text-lg hover:shadow-xl transition-all whitespace-nowrap cursor-pointer inline-block text-center"
+              className="px-8 py-4 bg-gradient-to-r from-blue-900 to-blue-700 text-white rounded-lg font-semibold text-lg hover:shadow-xl transition-all whitespace-nowrap cursor-pointer inline-block text-center"
             >
               View All Products
             </Link>
@@ -421,15 +422,15 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-5xl font-bold text-yellow-400 mb-2">15+</div>
+              <div className="text-5xl font-bold text-yellow-400 mb-2">3+</div>
               <p className="text-blue-100 text-lg">Years Experience</p>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold text-yellow-400 mb-2">50+</div>
+              <div className="text-5xl font-bold text-yellow-400 mb-2">5+</div>
               <p className="text-blue-100 text-lg">Countries Served</p>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold text-yellow-400 mb-2">5000+</div>
+              <div className="text-5xl font-bold text-yellow-400 mb-2">100+</div>
               <p className="text-blue-100 text-lg">Happy Clients</p>
             </div>
             <div className="text-center">

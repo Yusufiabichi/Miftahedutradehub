@@ -3,6 +3,7 @@ import Header from '../../components/feature/Header';
 import Footer from '../../components/feature/Footer';
 import WhatsAppButton from '../../components/feature/WhatsAppButton';
 import { useSEO, generateWebPageSchema } from '../../utils/seo';
+import BackToTop from '../../components/BackToTop';
 
 export default function ServicesPage() {
   // SEO
@@ -96,6 +97,7 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-gray-50">
       <Header />
       <WhatsAppButton />
+      <BackToTop />
 
       <section className="relative h-96 flex items-center justify-center overflow-hidden">
         <div 

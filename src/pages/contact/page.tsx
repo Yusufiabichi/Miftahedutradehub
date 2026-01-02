@@ -3,6 +3,7 @@ import Header from '../../components/feature/Header';
 import Footer from '../../components/feature/Footer';
 import WhatsAppButton from '../../components/feature/WhatsAppButton';
 import { useSEO, generateWebPageSchema } from '../../utils/seo';
+import BackToTop from '../../components/BackToTop';
 
 const SUPABASE_URL = import.meta.env.VITE_PUBLIC_SUPABASE_URL;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_PUBLIC_SUPABASE_ANON_KEY;
@@ -71,19 +72,19 @@ export default function ContactPage() {
     {
       icon: 'ri-map-pin-line',
       title: 'Visit Us',
-      details: ['123 Trade Center Road', 'Dhaka 1215, Bangladesh'],
+      details: ['123 Ahmadu Bello Way, Kano 700001, Nigeria'],
       color: 'from-blue-500 to-blue-600'
     },
     {
       icon: 'ri-phone-line',
       title: 'Call Us',
-      details: ['+880 1234-567890', '+880 1987-654321'],
+      details: ['+234 816 241 1941', '+234 803 456 7890'],
       color: 'from-green-500 to-green-600'
     },
     {
       icon: 'ri-mail-line',
       title: 'Email Us',
-      details: ['info@miftahedutrade.com', 'support@miftahedutrade.com'],
+      details: ['info@miftahedutradehub.com', 'support@miftahedutradehub.com'],
       color: 'from-yellow-500 to-yellow-600'
     },
     {
@@ -107,6 +108,7 @@ export default function ContactPage() {
     <div className="min-h-screen bg-white">
       <Header />
       <WhatsAppButton />
+      <BackToTop />
 
       <section className="relative pt-32 pb-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -352,14 +354,14 @@ export default function ContactPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+8801234567890"
+              href="tel:+2348162411941"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-900 rounded-lg font-semibold text-lg hover:shadow-2xl transition-all whitespace-nowrap cursor-pointer"
             >
               <i className="ri-phone-line mr-2"></i>
               Call Now
             </a>
             <a
-              href="https://wa.me/8801234567890"
+              href="https://wa.me/2348162411941"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 bg-green-500 text-white rounded-lg font-semibold text-lg hover:bg-green-600 transition-all whitespace-nowrap cursor-pointer"
