@@ -79,7 +79,7 @@ export default function Home() {
       id: 1,
       name: 'Heavy Duty Cargo Truck',
       category: 'Trucks',
-      image: 'https://readdy.ai/api/search-image?query=modern%20heavy%20duty%20cargo%20truck%20white%20background%20professional%20product%20photography%20clean%20simple%20backdrop%20commercial%20vehicle%20front%20three%20quarter%20view%20high%20quality%20detailed&width=600&height=600&seq=truck1&orientation=squarish',
+      image: './tipper.jpg',
       description: 'High-performance cargo truck with 20-ton capacity, fuel-efficient engine, and advanced safety features.',
       specs: ['20-ton capacity', 'Euro 5 engine', 'GPS tracking']
     },
