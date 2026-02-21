@@ -8,6 +8,7 @@ interface Blog {
   author: string;
   category: string;
   image: string;
+  images?: string[];
   tags: string[];
   read_time?: string;
   is_published: boolean;
@@ -23,6 +24,7 @@ export default function BlogsManager() {
   const [loading, setLoading] = useState(true);
   const [editingBlog, setEditingBlog] = useState<Blog | null>(null);
   const [showForm, setShowForm] = useState(false);
+  const [imagePreviews, setImagePreviews] = useState<string[]>([]);
 
   useEffect(() => {
     fetchBlogs();
@@ -44,9 +46,33 @@ export default function BlogsManager() {
     }
   };
 
+  const readFileAsDataUrl = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = () => reject(new Error('Failed to read image file'));
+      reader.readAsDataURL(file);
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
+    const imageFiles = formData
+      .getAll('images')
+      .filter((file): file is File => file instanceof File && file.size > 0);
+    let image = editingBlog?.image || '';
+    let images = editingBlog?.images || (editingBlog?.image ? [editingBlog.image] : []);
+
+    if (imageFiles.length > 0) {
+      try {
+        images = await Promise.all(imageFiles.map(file => readFileAsDataUrl(file)));
+        image = images[0] || '';
+      } catch {
+        console.error('Error processing image file');
+        return;
+      }
+    }
     
     const blogData = {
       title: formData.get('title') as string,
@@ -54,7 +80,8 @@ export default function BlogsManager() {
       content: formData.get('content') as string,
       author: formData.get('author') as string,
       category: formData.get('category') as string,
-      image: formData.get('image') as string,
+      image,
+      images,
       tags: (formData.get('tags') as string).split(',').map(tag => tag.trim()),
       read_time: formData.get('read_time') as string,
       is_published: formData.get('is_published') === 'true',
@@ -84,6 +111,7 @@ export default function BlogsManager() {
       fetchBlogs();
       setShowForm(false);
       setEditingBlog(null);
+      setImagePreviews([]);
     } catch (error) {
       console.error('Error saving blog:', error);
     }
@@ -107,6 +135,7 @@ export default function BlogsManager() {
 
   const handleEdit = (blog: Blog) => {
     setEditingBlog(blog);
+    setImagePreviews(blog.images && blog.images.length > 0 ? blog.images : blog.image ? [blog.image] : []);
     setShowForm(true);
   };
 
@@ -125,6 +154,7 @@ export default function BlogsManager() {
         <button
           onClick={() => {
             setEditingBlog(null);
+            setImagePreviews([]);
             setShowForm(true);
           }}
           className="px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors whitespace-nowrap cursor-pointer"
@@ -199,14 +229,55 @@ export default function BlogsManager() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Image URL</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Image Uploads</label>
                 <input
-                  type="url"
-                  name="image"
-                  defaultValue={editingBlog?.image}
-                  required
+                  type="file"
+                  name="images"
+                  multiple
+                  accept="image/*"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent"
+                  onChange={async (event) => {
+                    const files = Array.from(event.target.files || []);
+                    if (files.length === 0) {
+                      setImagePreviews(
+                        editingBlog?.images && editingBlog.images.length > 0
+                          ? editingBlog.images
+                          : editingBlog?.image
+                            ? [editingBlog.image]
+                            : []
+                      );
+                      return;
+                    }
+
+                    try {
+                      const previews = await Promise.all(files.map(file => readFileAsDataUrl(file)));
+                      setImagePreviews(previews);
+                    } catch {
+                      setImagePreviews(
+                        editingBlog?.images && editingBlog.images.length > 0
+                          ? editingBlog.images
+                          : editingBlog?.image
+                            ? [editingBlog.image]
+                            : []
+                      );
+                    }
+                  }}
                 />
+                <p className="text-xs text-gray-500 mt-1">
+                  Upload one or more images (optional). For edits, leave empty to keep current images.
+                </p>
+                {imagePreviews.length > 0 && (
+                  <div className="mt-3 grid grid-cols-2 md:grid-cols-3 gap-2">
+                    {imagePreviews.map((preview, index) => (
+                      <img
+                        key={`${preview}-${index}`}
+                        src={preview}
+                        alt={`Blog preview ${index + 1}`}
+                        className="w-full h-24 object-cover rounded-lg border border-gray-200"
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
 
               <div className="grid grid-cols-2 gap-4">
@@ -250,6 +321,7 @@ export default function BlogsManager() {
                   onClick={() => {
                     setShowForm(false);
                     setEditingBlog(null);
+                    setImagePreviews([]);
                   }}
                   className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors whitespace-nowrap cursor-pointer"
                 >
@@ -285,7 +357,7 @@ export default function BlogsManager() {
                 <td className="px-6 py-4">
                   <div className="flex items-center space-x-3">
                     <img
-                      src={blog.image}
+                      src={blog.image || blog.images?.[0]}
                       alt={blog.title}
                       className="w-12 h-12 rounded-lg object-cover object-top"
                     />

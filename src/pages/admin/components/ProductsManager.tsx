@@ -4,9 +4,10 @@ interface Product {
   id: number;
   name: string;
   category: string;
-  price: number;
   description: string;
   image: string;
+  images?: string[];
+  features: string[];
   specifications: string[];
   status: 'active' | 'inactive';
 }
@@ -17,9 +18,10 @@ export default function ProductsManager() {
       id: 1,
       name: 'Heavy Duty Cargo Truck',
       category: 'Trucks',
-      price: 45000,
       description: 'Professional cargo transportation with maximum payload capacity',
       image: 'https://readdy.ai/api/search-image?query=modern%20heavy%20duty%20cargo%20truck%20professional%20commercial%20vehicle%20blue%20sky%20background%20high%20quality%20detailed%20realistic&width=800&height=600&seq=truck1&orientation=landscape',
+      images: ['https://readdy.ai/api/search-image?query=modern%20heavy%20duty%20cargo%20truck%20professional%20commercial%20vehicle%20blue%20sky%20background%20high%20quality%20detailed%20realistic&width=800&height=600&seq=truck1&orientation=landscape'],
+      features: ['Heavy payload support', 'Long-haul reliability', 'Commercial grade build'],
       specifications: ['Payload: 20 tons', 'Engine: 400HP', 'Transmission: Manual'],
       status: 'active'
     },
@@ -27,9 +29,10 @@ export default function ProductsManager() {
       id: 2,
       name: 'Commercial Tipper Truck',
       category: 'Tippers',
-      price: 52000,
       description: 'Heavy-duty tipper for construction and mining operations',
       image: 'https://readdy.ai/api/search-image?query=commercial%20tipper%20truck%20construction%20vehicle%20dumper%20truck%20professional%20industrial%20equipment%20simple%20background&width=800&height=600&seq=tipper1&orientation=landscape',
+      images: ['https://readdy.ai/api/search-image?query=commercial%20tipper%20truck%20construction%20vehicle%20dumper%20truck%20professional%20industrial%20equipment%20simple%20background&width=800&height=600&seq=tipper1&orientation=landscape'],
+      features: ['Hydraulic lifting bed', 'Rugged chassis', 'High volume hauling'],
       specifications: ['Capacity: 25 cubic meters', 'Hydraulic system', '6x4 configuration'],
       status: 'active'
     },
@@ -37,9 +40,10 @@ export default function ProductsManager() {
       id: 3,
       name: 'Agricultural Tractor 4WD',
       category: 'Tractors',
-      price: 28000,
       description: 'Powerful 4-wheel drive tractor for all farming needs',
       image: 'https://readdy.ai/api/search-image?query=modern%20agricultural%20tractor%20farming%20equipment%20green%20field%20professional%20machinery%20simple%20background%20high%20quality&width=800&height=600&seq=tractor1&orientation=landscape',
+      images: ['https://readdy.ai/api/search-image?query=modern%20agricultural%20tractor%20farming%20equipment%20green%20field%20professional%20machinery%20simple%20background%20high%20quality&width=800&height=600&seq=tractor1&orientation=landscape'],
+      features: ['All-terrain traction', 'Efficient fuel usage', 'Multi-tool compatibility'],
       specifications: ['Power: 120HP', '4WD', 'PTO: 540/1000 RPM'],
       status: 'active'
     },
@@ -47,9 +51,10 @@ export default function ProductsManager() {
       id: 4,
       name: 'Electric City Bike Pro',
       category: 'Electric Bikes',
-      price: 1200,
       description: 'Eco-friendly electric bike perfect for urban commuting',
       image: 'https://readdy.ai/api/search-image?query=modern%20electric%20bike%20urban%20transportation%20eco%20friendly%20sleek%20design%20simple%20clean%20background%20professional%20product%20photography&width=800&height=600&seq=ebike1&orientation=landscape',
+      images: ['https://readdy.ai/api/search-image?query=modern%20electric%20bike%20urban%20transportation%20eco%20friendly%20sleek%20design%20simple%20clean%20background%20professional%20product%20photography&width=800&height=600&seq=ebike1&orientation=landscape'],
+      features: ['Pedal assist modes', 'Fast charging battery', 'Lightweight frame'],
       specifications: ['Range: 80km', 'Max Speed: 25km/h', 'Battery: 48V 15Ah'],
       status: 'active'
     },
@@ -57,9 +62,10 @@ export default function ProductsManager() {
       id: 5,
       name: 'Smartphone Pro Max',
       category: 'Phones',
-      price: 899,
       description: 'Latest flagship smartphone with advanced features',
       image: 'https://readdy.ai/api/search-image?query=premium%20flagship%20smartphone%20modern%20mobile%20phone%20sleek%20design%20simple%20clean%20white%20background%20professional%20product%20photography&width=800&height=600&seq=phone1&orientation=landscape',
+      images: ['https://readdy.ai/api/search-image?query=premium%20flagship%20smartphone%20modern%20mobile%20phone%20sleek%20design%20simple%20clean%20white%20background%20professional%20product%20photography&width=800&height=600&seq=phone1&orientation=landscape'],
+      features: ['5G connectivity', 'Fast wireless charging', 'Premium build quality'],
       specifications: ['Display: 6.7" OLED', 'Camera: 108MP', 'RAM: 12GB'],
       status: 'active'
     }
@@ -68,6 +74,7 @@ export default function ProductsManager() {
   const [showAddModal, setShowAddModal] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
   const [filterCategory, setFilterCategory] = useState<string>('all');
+  const [imagePreviews, setImagePreviews] = useState<string[]>([]);
 
   const categories = ['all', 'Trucks', 'Tippers', 'Tractors', 'Electric Bikes', 'Phones'];
 
@@ -83,18 +90,42 @@ export default function ProductsManager() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const readFileAsDataUrl = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = () => reject(new Error('Failed to read image file'));
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const name = formData.get('name') as string;
     const category = formData.get('category') as string;
-    const price = parseFloat(formData.get('price') as string);
     const description = formData.get('description') as string;
-    const image = formData.get('image') as string;
+    const imageFiles = formData
+      .getAll('images')
+      .filter((file): file is File => file instanceof File && file.size > 0);
+    const featuresInput = formData.get('features') as string;
+    const features = featuresInput.split('\n').filter(feature => feature.trim() !== '');
     const specsInput = formData.get('specifications') as string;
     const specifications = specsInput.split('\n').filter(spec => spec.trim() !== '');
+    let image = editingProduct?.image || '';
+    let images = editingProduct?.images || (editingProduct?.image ? [editingProduct.image] : []);
 
-    if (!name || !category || !price || !description || !image) {
+    if (imageFiles.length > 0) {
+      try {
+        images = await Promise.all(imageFiles.map(file => readFileAsDataUrl(file)));
+        image = images[0] || '';
+      } catch {
+        alert('Unable to process selected image');
+        return;
+      }
+    }
+
+    if (!name || !category || !description) {
       alert('Please fill in all required fields');
       return;
     }
@@ -102,7 +133,7 @@ export default function ProductsManager() {
     if (editingProduct) {
       setProducts(products.map(product =>
         product.id === editingProduct.id
-          ? { ...product, name, category, price, description, image, specifications }
+          ? { ...product, name, category, description, image, images, features, specifications }
           : product
       ));
     } else {
@@ -110,9 +141,10 @@ export default function ProductsManager() {
         id: Date.now(),
         name,
         category,
-        price,
         description,
         image,
+        images,
+        features,
         specifications,
         status: 'active'
       };
@@ -121,6 +153,7 @@ export default function ProductsManager() {
 
     setShowAddModal(false);
     setEditingProduct(null);
+    setImagePreviews([]);
   };
 
   const filteredProducts = filterCategory === 'all' 
@@ -132,7 +165,11 @@ export default function ProductsManager() {
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold text-blue-900">Manage Products</h2>
         <button
-          onClick={() => setShowAddModal(true)}
+          onClick={() => {
+            setEditingProduct(null);
+            setImagePreviews([]);
+            setShowAddModal(true);
+          }}
           className="px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all whitespace-nowrap cursor-pointer flex items-center space-x-2"
         >
           <i className="ri-add-line text-xl"></i>
@@ -160,11 +197,17 @@ export default function ProductsManager() {
         {filteredProducts.map((product) => (
           <div key={product.id} className="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:shadow-lg transition-all">
             <div className="relative h-48 bg-gray-100">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-full object-cover object-top"
-              />
+              {(product.image || (product.images && product.images.length > 0)) ? (
+                <img
+                  src={product.image || product.images?.[0]}
+                  alt={product.name}
+                  className="w-full h-full object-cover object-top"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">
+                  No image
+                </div>
+              )}
               <div className="absolute top-3 left-3 flex space-x-2">
                 <span className="px-3 py-1 bg-yellow-500 text-white text-xs font-semibold rounded-full">
                   {product.category}
@@ -178,7 +221,6 @@ export default function ProductsManager() {
             </div>
             <div className="p-4">
               <h3 className="text-lg font-bold text-blue-900 mb-1">{product.name}</h3>
-              <p className="text-2xl font-bold text-yellow-600 mb-2">${product.price.toLocaleString()}</p>
               <p className="text-gray-600 text-sm mb-3">{product.description}</p>
               <div className="mb-4">
                 <p className="text-xs font-semibold text-gray-700 mb-1">Specifications:</p>
@@ -193,7 +235,10 @@ export default function ProductsManager() {
               </div>
               <div className="flex space-x-2">
                 <button
-                  onClick={() => setEditingProduct(product)}
+                  onClick={() => {
+                    setEditingProduct(product);
+                    setImagePreviews(product.images && product.images.length > 0 ? product.images : product.image ? [product.image] : []);
+                  }}
                   className="flex-1 px-3 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer text-sm whitespace-nowrap"
                 >
                   <i className="ri-edit-line mr-1"></i>
@@ -253,19 +298,6 @@ export default function ProductsManager() {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Price ($)</label>
-                <input
-                  type="number"
-                  name="price"
-                  defaultValue={editingProduct?.price}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
-                  placeholder="Enter price"
-                  min="0"
-                  step="0.01"
-                  required
-                />
-              </div>
-              <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">Description</label>
                 <textarea
                   name="description"
@@ -277,15 +309,65 @@ export default function ProductsManager() {
                 ></textarea>
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Image URL</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Product Image</label>
                 <input
-                  type="url"
-                  name="image"
-                  defaultValue={editingProduct?.image}
+                  type="file"
+                  name="images"
+                  multiple
+                  accept="image/*"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
-                  placeholder="Enter image URL"
-                  required
+                  onChange={async (event) => {
+                    const files = Array.from(event.target.files || []);
+                    if (files.length === 0) {
+                      setImagePreviews(
+                        editingProduct?.images && editingProduct.images.length > 0
+                          ? editingProduct.images
+                          : editingProduct?.image
+                            ? [editingProduct.image]
+                            : []
+                      );
+                      return;
+                    }
+
+                    try {
+                      const previews = await Promise.all(files.map(file => readFileAsDataUrl(file)));
+                      setImagePreviews(previews);
+                    } catch {
+                      setImagePreviews(
+                        editingProduct?.images && editingProduct.images.length > 0
+                          ? editingProduct.images
+                          : editingProduct?.image
+                            ? [editingProduct.image]
+                            : []
+                      );
+                    }
+                  }}
                 />
+                <p className="text-xs text-gray-500 mt-1">
+                  Upload one or more images (optional). For edits, leave empty to keep current images.
+                </p>
+                {imagePreviews.length > 0 && (
+                  <div className="mt-3 grid grid-cols-2 md:grid-cols-3 gap-2">
+                    {imagePreviews.map((preview, index) => (
+                      <img
+                        key={`${preview}-${index}`}
+                        src={preview}
+                        alt={`Product preview ${index + 1}`}
+                        className="w-full h-24 object-cover rounded-lg border border-gray-200"
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Features (one per line)</label>
+                <textarea
+                  name="features"
+                  defaultValue={editingProduct?.features.join('\n')}
+                  rows={3}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                  placeholder="Enter features, one per line"
+                ></textarea>
               </div>
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">Specifications (one per line)</label>
@@ -303,6 +385,7 @@ export default function ProductsManager() {
                   onClick={() => {
                     setShowAddModal(false);
                     setEditingProduct(null);
+                    setImagePreviews([]);
                   }}
                   className="flex-1 px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition-colors whitespace-nowrap cursor-pointer"
                 >
